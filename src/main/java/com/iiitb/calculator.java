@@ -1,9 +1,10 @@
 package com.iiitb;
 import java.lang.Math;
 import java.util.Scanner;
-public class calculator {public double squareRootFunc(int x){
+public class calculator {
+    public double squareRootFunc(int x){
     return Math.sqrt(x);
-}
+    }
 
     public long factorialFunc(int x){
         long result = 1;
