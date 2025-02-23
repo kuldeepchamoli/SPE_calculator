@@ -2,7 +2,9 @@ FROM openjdk:17-jdk
 WORKDIR /app
 
 # Copy the JAR file from the target directory to /app inside the container
-COPY SPE_MINIPROJECT/demo/target/MiniProject-1.0-SNAPSHOT.jar app.jar
+COPY target/scientific_calc-1.0-SNAPSHOT.jar app.jar
+
+EXPOSE 8080
 
 # Run the Java application
-CMD ["java", "-cp", "app.jar", "com.example.demo.App"]
+CMD ["java", "-cp", "app.jar", "com.iiitb.Main"]
