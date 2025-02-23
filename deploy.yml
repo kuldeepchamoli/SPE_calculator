@@ -1,0 +1,26 @@
+- name: Deploy Calculator Docker Container
+  hosts: servers
+  remote_user: kuldeep-chamoli
+  become: false
+  tasks:
+    - name: Pull Docker Image
+      docker_image:
+        name: "kuldeep2026/calculator"
+        source: pull
+      register: docker_pull_result
+
+    - name: Display Docker Pull Result
+      debug:
+        var: docker_pull_result
+
+    - name: Start Docker service
+      service:
+        name: docker
+        state: started
+
+    - name: Remove existing calculator container (if any)
+      command: docker rm -f calculator
+      ignore_errors: yes
+
+    - name: Running container
+      shell: docker run -it -d --name calculator kuldeep2026/calculator /bin/sh
