@@ -70,6 +70,6 @@ pipeline {
                 body: "The pipeline ${env.JOB_NAME} - Build #${env.BUILD_NUMBER} has failed.\nCheck the build details at: ${env.BUILD_URL}"
         }
     }
-
+}
     }
 }
