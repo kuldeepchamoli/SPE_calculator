@@ -30,7 +30,14 @@ public class Main {
 
     public static void main(String[] args){
         Scanner s = new Scanner(System.in);
-        calculator sc = new calculator();
+        if (s.hasNextInt()) {
+            int choice = s.nextInt();
+        } else {
+            System.out.println("No input detected. Exiting...");
+            return;
+        }
+
+        Main sc = new Main();
         boolean exitNow = false;
         while (!exitNow){
             System.out.println("Select Operation to be performed: \n"+
