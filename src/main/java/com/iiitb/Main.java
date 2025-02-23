@@ -30,13 +30,6 @@ public class Main {
 
     public static void main(String[] args){
         Scanner s = new Scanner(System.in);
-        if (s.hasNextInt()) {
-            int choice = s.nextInt();
-        } else {
-            System.out.println("No input detected. Exiting...");
-            return;
-        }
-
         Main sc = new Main();
         boolean exitNow = false;
         while (!exitNow){
@@ -47,6 +40,7 @@ public class Main {
                     "4. Evaluate Power of the number x^b \n"+
                     "5. Enter any other value to exit!!\n");
             int operation = s.nextInt();
+
             switch (operation){
                 case(1):
                     System.out.println("Enter the number: ");
